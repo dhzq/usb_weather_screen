@@ -1,0 +1,7 @@
+/managed_components
+/cmake-build-debug-esp-idf
+/.idea
+/demo
+/CLAUDE.md
+/dependencies.lock
+/sdkconfig.old

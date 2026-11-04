@@ -1,0 +1,16 @@
+# Collects every LVGL_REGISTER_PAGE() entry (section .lvgl_pages, one per page
+# .c file) into flash rodata, contiguously, and exports the bounds as
+# _lvgl_pages_start / _lvgl_pages_end for lvgl_mgr.c to iterate.
+[sections:lvgl_pages]
+entries:
+    .lvgl_pages+
+
+[scheme:lvgl_pages_default]
+entries:
+    lvgl_pages -> flash_rodata
+
+[mapping:lvgl_pages]
+archive: *
+entries:
+    * (lvgl_pages_default);
+        lvgl_pages -> flash_rodata KEEP() SURROUND(lvgl_pages)
