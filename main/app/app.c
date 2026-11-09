@@ -113,11 +113,12 @@ void app_main_start(void)
 {
     settings_store_init();
     hal_i2c_init();
+    touch_prepare(); /* before the LCD reset, see touch.h */
     display_init();
-    hal_backlight_init();
     if (touch_init() != ESP_OK) {
         ESP_LOGE(TAG, "touch unavailable, continuing without it");
     }
+    hal_backlight_init();
     /* PWM level only; the backlight itself stays off (see hal_backlight_init)
      * until the first page has been drawn, so the LVGL default white screen is
      * never visible. */

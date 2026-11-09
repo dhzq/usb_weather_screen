@@ -594,6 +594,13 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# USB Weather Screen
+#
+# CONFIG_TOUCH_CONTROLLER_FT6336U is not set
+CONFIG_TOUCH_CONTROLLER_GT911=y
+# end of USB Weather Screen
+
+#
 # Compiler options
 #
 # CONFIG_COMPILER_OPTIMIZATION_DEBUG is not set

@@ -1,0 +1,17 @@
+menu "USB Weather Screen"
+
+    choice TOUCH_CONTROLLER
+        prompt "Touch controller"
+        default TOUCH_CONTROLLER_FT6336U
+        help
+            Touch controller fitted to the LCD module. All supported
+            modules use an ST7701S panel; they differ in the touch chip.
+
+        config TOUCH_CONTROLLER_FT6336U
+            bool "FT6336U (FT5x06-compatible register protocol)"
+
+        config TOUCH_CONTROLLER_GT911
+            bool "GT911 (Goodix)"
+    endchoice
+
+endmenu

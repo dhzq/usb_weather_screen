@@ -30,10 +30,10 @@
 #define HAL_HUB_PORT_FAULT_PINS    { 10, 12, 14, -1 } /* P12, P14, P16, (USB4: none) */
 #define HAL_HUB_STATUS_ACTIVE_HIGH false /* status indicator pins read high when asserted */
 
-/* FT6336U touch (on I2C_NUM_0, shared with the TCA9555 I/O expander) */
+/* Touch (FT6336U 0x38 or GT911 0x5D/0x14, selected by Kconfig TOUCH_CONTROLLER;
+ * on I2C_NUM_0, shared with the TCA9555 I/O expander) */
 #define HAL_TOUCH_I2C_SDA_PIN      GPIO_NUM_17
 #define HAL_TOUCH_I2C_SCL_PIN      GPIO_NUM_18
-#define HAL_TOUCH_I2C_ADDRESS      0x38
 #define HAL_TOUCH_INT_PIN          GPIO_NUM_8
 
 /* ST7701 RGB panel timing + control pins (3-wire SPI multiplexed onto the
